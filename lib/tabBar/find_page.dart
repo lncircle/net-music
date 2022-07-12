@@ -22,7 +22,28 @@ class FindPage extends StatelessWidget {
             pagination: _buildPlugin(),
           ),
         ),
-        Container(height: 100, child: FunctionList())
+        Container(height: 100, child: FunctionList()),
+        Container(
+          height: 200,
+          child: Column(children: [
+            Container(
+              height: 50,
+              child: Flex(
+                direction: Axis.horizontal,
+                children: [
+                  Text("推荐歌单"),
+                  Spacer(
+                    flex: 1,
+                  ),
+                  Row(
+                    children: [Text('更多')],
+                  )
+                ],
+              ),
+            ),
+            Container(height: 120, child: PlayList())
+          ]),
+        ),
       ],
     ));
   }
@@ -61,6 +82,44 @@ class FunctionItem extends StatelessWidget {
       children: [
         Container(
           child: Image.asset('images/DSC_2261.jpeg', width: 100.0, height: 60),
+        ),
+        Container(
+          child: Text("Hello"),
+        )
+      ],
+    );
+  }
+}
+
+class PlayList extends StatelessWidget {
+  const PlayList({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return ListView(
+      scrollDirection: Axis.horizontal,
+      children: <Widget>[
+        PlayListItem(),
+        PlayListItem(),
+        PlayListItem(),
+        PlayListItem(),
+        PlayListItem(),
+        PlayListItem(),
+      ],
+    );
+  }
+}
+
+class PlayListItem extends StatelessWidget {
+  const PlayListItem({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          child: Image.asset('images/DSC_2261.jpeg', width: 100.0, height: 100),
         ),
         Container(
           child: Text("Hello"),
