@@ -41,13 +41,13 @@ class _IndexState extends State<IndexPage> {
   @override
   void initState() {
     super.initState();
-    currentIndex = 0;
+    currentIndex = 2;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('网易云音乐')),
+      appBar: AppBar(title: const Text('r')),
       bottomNavigationBar: BottomNavigationBar(
         items: bottomItems,
         currentIndex: currentIndex,
